@@ -1,0 +1,21 @@
+[tasks]
+prove
+cover
+
+[options]
+prove:
+mode prove
+--
+cover:
+mode cover
+--
+
+[engines]
+smtbmc boolector
+
+[script]
+read -formal sipo.v
+prep -top sipo
+
+[files]
+./rtl/sipo.v

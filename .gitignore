@@ -1,0 +1,9 @@
+Vivado
+.Xil
+vivado*.jou
+vivado*.log
+test/formal/rtl
+results.xml
+__pycache__
+sim_build
+.pytest_cache

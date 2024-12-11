@@ -1,0 +1,22 @@
+[tasks]
+prove
+cover
+
+[options]
+prove:
+mode prove
+--
+cover:
+mode cover
+--
+
+[engines]
+smtbmc boolector
+
+[script]
+read -formal wb_timer.v address_validation_unit.v
+prep -top wb_timer
+
+[files]
+./rtl/wb_timer.v
+./rtl/address_validation_unit.v

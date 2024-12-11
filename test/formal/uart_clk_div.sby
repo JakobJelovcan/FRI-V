@@ -1,0 +1,21 @@
+[tasks]
+prove
+cover
+
+[options]
+prove:
+mode prove
+--
+cover:
+mode cover
+--
+
+[engines]
+smtbmc boolector
+
+[script]
+read -formal uart_clk_div.v
+prep -top uart_clk_div
+
+[files]
+./rtl/uart_clk_div.v

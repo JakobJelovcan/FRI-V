@@ -1,0 +1,26 @@
+[tasks]
+prove
+cover
+
+[options]
+prove:
+mode prove
+--
+cover:
+mode cover
+--
+
+[engines]
+smtbmc boolector
+
+[script]
+read -formal wb_crossbar.v wb_crossbar_addr_decoder.v wb_crossbar_master_index_decoder.v wb_crossbar_slave_index_decoder.v wb_crossbar_arbitrer.v
+hierarchy -check -top wb_crossbar -chparam DW 8 -chparam AW 32 -chparam NM 2 -chparam NS 5
+prep -top wb_crossbar
+
+[files]
+./rtl/wb_crossbar.v
+./rtl/wb_crossbar_addr_decoder.v
+./rtl/wb_crossbar_arbitrer.v
+./rtl/wb_crossbar_master_index_decoder.v
+./rtl/wb_crossbar_slave_index_decoder.v

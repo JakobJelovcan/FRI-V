@@ -1,0 +1,23 @@
+[tasks]
+prove
+cover
+
+[options]
+prove:
+mode prove
+--
+cover:
+mode cover
+--
+
+[engines]
+smtbmc boolector
+
+[script]
+read -formal wb_rom.v bram_rom.v
+hierarchy -check -top wb_rom -chparam DW 16 -chparam AW 8
+prep -top wb_rom
+
+[files]
+./rtl/wb_rom.v
+./rtl/bram_rom.v

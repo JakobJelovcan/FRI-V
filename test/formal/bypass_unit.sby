@@ -1,0 +1,19 @@
+[tasks]
+prove
+cover
+
+[options]
+prove:
+mode prove
+--
+
+[engines]
+smtbmc boolector
+
+[script]
+read -formal bypass_unit.v lzd.v
+prep -top bypass_unit
+
+[files]
+./rtl/bypass_unit.v
+./rtl/lzd.v
